@@ -1,25 +1,17 @@
-# Tapas with Ember
+# Yet Another Ember Brunch (YAEB)
 
 A [Brunch][] skeleton for rapid [Ember][] development. Including Ember
 installation scripts, environment-specific JS builds, generators, and
 [Ember.vim][] support.
-
-<p align="center">
-  <a href="http://www.youtube.com/watch?v=BP7lTpNfkyU">
-    <img src="http://i.imgur.com/KxXQFtp.png"
-    alt="Me talking about Tapas with Ember">
-  </a>
-</p>
 
 ## Technology
 
 * [Brunch][]
 * [Ember][]
 * [CoffeeScript][]
-* [Stylus][]
+* [Less][]
 * [Handlebars](http://handlebarsjs.com)
 * [HTML5 Boilerplate](http://html5boilerplate.com)
-* [Normalize.css](http://necolas.github.io/normalize.css/)
 * _Optional_ [Ember Data][]
 * _Optional_ [Ember Model][]
 
@@ -45,7 +37,7 @@ installation scripts, environment-specific JS builds, generators, and
 
 ## Requirements
 
-Before using Tapas with Ember you will need to install [Node][] and
+Before using YAEB with Ember you will need to install [Node][] and
 [Brunch][] 1.7 or above.
 
 ```
@@ -58,7 +50,7 @@ Now that you've got Brunch installed, you're three commands away from a running
 Ember app!
 
 ```bash
-brunch new gh:mutewinter/tapas-with-ember <appname>
+brunch new gh:cavneb/yet-another-ember-brunch <appname>
 cd <appname>
 cake server
 ```
@@ -68,13 +60,13 @@ Ember app! Code changes you make will be automatically loaded in the browser.
 Edit [`index_route.coffee`](app/routes/index_route.coffee) to see live-updating
 in action.
 
-Tapas with Ember runs Ember 1.0 out of the box. You can update to Beta or
+YAEB runs Ember 1.0 out of the box. You can update to Beta or
 Canary builds using the command below. It's also easy to install the latest
 Ember Data or Ember Model using the `cake` scripts below.
 
 ## Deploying
 
-Tapas with Ember comes with a [Mina][] [deployment script][].
+YAEB comes with a [Mina][] [deployment script][].
 
 1. Install Mina by running `gem install mina`
 1. Fill in your credentials in [`config/deploy.rb`][deployment script]
@@ -89,7 +81,7 @@ See [the FAQ][] in the Wiki.
 
 ### Install Latest Ember
 
-Tapas with Ember ships with Ember 1.1.2 already installed. You can update to
+YAEB ships with Ember 1.1.2 already installed. You can update to
 the latest release from each channel by using the commands below.
 
 ```bash
@@ -125,25 +117,21 @@ cake handlebars:install
 
 ## Generators
 
-This skeleton makes use of [scaffolt][] generators to help you create common
-files quicker.
+This skeleton makes use of [loom][] generators 
+to help you create common files quicker.
 
-To use first install scaffolt globally with `npm install -g scaffolt`. Then you
-can use the following command to generate files.
+You can use the following command to generate files.
 
 ```
-scaffolt arraycontroller <name>   →    app/controllers/<name>s.coffee
-scaffolt component <name>         →    app/components/<name>.coffee
-                                       app/templates/components/<name>.hbs
-scaffolt controller <name>        →    app/controllers/<name>.coffee
-scaffolt helper <name>            →    app/helpers/<name>.coffee
-scaffolt initializer <name>       →    app/initializers/<name>.coffee
-scaffolt mixin <name>             →    app/mixins/<name>.coffee
-scaffolt model <name>             →    app/models/name.coffee
-scaffolt route <name>             →    app/routes/<name>.coffee
-scaffolt router                   →    app/config/router.coffee
-scaffolt template <name>          →    app/<name>.hbs
-scaffolt view <name>              →    app/views/<name>.coffee
+generate component x-buttonset
+generate controller users/mini-profile
+generate controller application type:array
+generate helper capitalize
+generate mixin queryable
+generate model user name:string age:number
+generate route index
+generate template profile
+generate view index
 ```
 
 ## Compiling for Production
@@ -159,12 +147,12 @@ version of Ember, run the following command:
 The following [`cake`](/Cakefile) scripts are provided.
 
 ```
-cake server               # start the brunch server in development
-cake build                # build for production (delete public folder first)
-cake ember:install        # install latest Ember
-cake ember-data:install   # install latest Ember Data
-cake ember-model:install  # install latest Ember Model
-cake handlebars:install   # install latest Handlebars
+cake server                         # start the brunch server in development
+cake build                          # build for production (delete public folder first)
+cake ember:install                  # install latest Ember
+cake -c "beta" ember-data:install   # install latest Ember Data
+cake ember-model:install            # install latest Ember Model
+cake handlebars:install             # install latest Handlebars
 ```
 
 ## Pow.cx
@@ -174,7 +162,7 @@ To use this app with [Pow.cx](http://pow.cx/), follow these simple steps:
 1. Install [Pow.cx](http://pow.cx/)
 1. `echo 3333 > ~/.pow/<appname>`
 1. Start the server with `cake server`
-1. Open [tapas-with-ember.dev](http://<app-name>.dev)
+1. Open [yet-another-ember-brunch.dev](http://<app-name>.dev)
 
 
 ## Testing
@@ -231,26 +219,27 @@ commands:
 :Eview <name>        → app/views/<name>.coffee
 ```
 
-## Updating Tapas with Ember
+## Updating YAEB
 
-Tapas with Ember has a built-in update script.
+YAEB has a built-in update script.
 
 ```
-cake tapas:update
+cake yaeb:update
 ```
 
 It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
 `config.coffee`, `generators/*`.
 
 ## Thanks To
-
+* [@mutewinter](https://github.com/mutewinter/tapas-with-ember) for making vital changes to the original
+  skeleton. YAEB is based on this skeleton.
 * [@gcollazo](https://github.com/gcollazo) for making
   [brunch-with-ember-reloaded][], which Tapas with Ember is based on.
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mutewinter/tapas-with-ember/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/cavneb/yet-another-ember-brunch/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 [brunch-with-ember-reloaded]: https://github.com/gcollazo/brunch-with-ember-reloaded
-[Stylus]: http://learnboost.github.io/stylus/
+[Less]: http://lesscss.org
 [CoffeeScript]: http://coffeescript.org/
 [auto-reload-brunch]: https://github.com/brunch/auto-reload-brunch
 [gzip-brunch]: https://github.com/banyan/gzip-brunch
@@ -262,7 +251,7 @@ It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
 [ember-rails]: https://github.com/emberjs/ember-rails
 [Ember Data]: https://github.com/emberjs/data
 [Ember Model]: https://github.com/ebryn/ember-model
-[scaffolt]: https://github.com/paulmillr/scaffolt
-[the FAQ]: https://github.com/mutewinter/tapas-with-ember/wiki/FAQ
+[loom]: https://github.com/cavneb/loom-generators-ember-brunch
+[the FAQ]: https://github.com/cavneb/yet-another-ember-brunch/wiki/FAQ
 [deployment script]: /config/deploy.rb
 [Mina]: http://nadarei.co/mina/

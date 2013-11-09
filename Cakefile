@@ -24,7 +24,6 @@ spawnBrunch = (flags, env) ->
   brunch.stdout.on 'data', (data) -> console.log data.toString().trim()
   brunch.stderr.on 'data', (data) -> console.log data.toString().trim()
 
-
 task 'server', 'start the brunch server in development', (options) ->
   flags = ['w', '-s']
   if options.production?
@@ -38,12 +37,12 @@ task 'build', 'build for production (delete public folder first)', ->
   spawnBrunch ['b', '-P'], process.env
 
 # -------------
-# Tapas Updates
+# YAEB Updates
 # -------------
-updateMessage = 'update Tapas to latest (Cakefile, package.json, portkey.json,
+updateMessage = 'update YAEB to latest (Cakefile, package.json, portkey.json,
  config.coffee, generators/*)'
-task 'tapas:update', updateMessage, (options) ->
-  url = 'https://codeload.github.com/mutewinter/tapas-with-ember/zip/master'
+task 'yaeb:update', updateMessage, (options) ->
+  url = 'https://codeload.github.com/cavneb/yet-another-ember-brunch/zip/master'
   filesToUpdate = [
     'Cakefile'
     'package.json'
@@ -69,7 +68,7 @@ task 'tapas:update', updateMessage, (options) ->
       zip = new AdmZip(buf)
 
       filesToUpdate.forEach (file) ->
-        targetFile = "tapas-with-ember-master/#{file}"
+        targetFile = "yet-another-ember-brunch-master/#{file}"
         if /\/$/.test(file)
           zip.extractEntryTo(targetFile, file, false, true)
         else
