@@ -36,6 +36,6 @@
   "devDependencies": {
     "qunitjs": "*",
     "testem": "~0.5.8",
-    "loom-generators-ember-brunch": "~0.0.2"
+    "loom-generators-ember-brunch": "~0.0.3"
   }
 }

@@ -19,4 +19,6 @@ if env.get('isDevelopment')
 else
   options = {}
 
-module.exports = Ember.Application.create(options)
+App = Ember.Application.create(options)
+# App.Store = require('./store')  # Uncomment if using Ember Data
+module.exports = App

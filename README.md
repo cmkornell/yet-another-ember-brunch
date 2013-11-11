@@ -124,6 +124,7 @@ You can use the following command to generate files.
 
 ```
 generate component x-buttonset
+generate lib book
 generate controller users/mini-profile
 generate controller application type:array
 generate helper capitalize
@@ -227,8 +228,7 @@ YAEB has a built-in update script.
 cake yaeb:update
 ```
 
-It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`,
-`config.coffee`, `generators/*`.
+It updates and **overwites** `Cakefile`, `package.json`, `portkey.json`, `config.coffee`.
 
 ## Thanks To
 * [@mutewinter](https://github.com/mutewinter/tapas-with-ember) for making vital changes to the original

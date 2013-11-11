@@ -40,7 +40,7 @@ task 'build', 'build for production (delete public folder first)', ->
 # YAEB Updates
 # -------------
 updateMessage = 'update YAEB to latest (Cakefile, package.json, portkey.json,
- config.coffee, generators/*)'
+ config.coffee)'
 task 'yaeb:update', updateMessage, (options) ->
   url = 'https://codeload.github.com/cavneb/yet-another-ember-brunch/zip/master'
   filesToUpdate = [
@@ -48,7 +48,6 @@ task 'yaeb:update', updateMessage, (options) ->
     'package.json'
     'portkey.json'
     'config.coffee'
-    'generators/'
   ]
   https.get url, (res) ->
     data = []
